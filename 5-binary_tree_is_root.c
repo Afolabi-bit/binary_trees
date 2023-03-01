@@ -15,4 +15,5 @@ if (node->parent == NULL)
 return (1);
 
 return (0);
+
 }
