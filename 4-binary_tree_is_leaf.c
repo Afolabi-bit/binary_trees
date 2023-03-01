@@ -14,4 +14,5 @@ if (node->left || node->right)
 return (0);
 
 return (1);
+
 }
