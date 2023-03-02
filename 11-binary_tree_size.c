@@ -13,7 +13,8 @@ size_t size = 0;
 if (tree == NULL)
 return (0);
 
-size = 1 + binary_tree_size(tree->left);
-size = 1 + binary_tree_size(tree->right);
+size =  binary_tree_size(tree->left);
+size = size + 1 + binary_tree_size(tree->right);
+return (size);
 
 }
