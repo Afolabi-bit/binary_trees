@@ -22,7 +22,6 @@ else
 {
 leftHeight = 0;
 }
-
 if (tree->right)
 {
 rightHeight = 1 + binary_tree_height(tree->right);
