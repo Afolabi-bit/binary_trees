@@ -63,4 +63,6 @@ right_depth = binary_tree_height(tree->right);
 
 return (left_perfect && right_perfect && (left_depth == right_depth))
 }
+
+return (0);
 }
