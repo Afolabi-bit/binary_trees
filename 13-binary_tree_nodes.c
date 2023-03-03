@@ -13,8 +13,11 @@ size_t nodes = 0;
 if (tree == NULL)
 return (0);
 
-nodes = binary_tree_nodes(tree->left);
-nodes = nodes + binary_tree_nodes(tree->right) + 1;
+if (tree->left || tree->right)
+{
+nodes = 1 + binary_tree_nodes(tree->left);
+nodes = nodes + binary_tree_nodes(tree->right);
+}
 return (nodes);
 
 }
