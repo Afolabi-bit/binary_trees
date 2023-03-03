@@ -1,7 +1,5 @@
 #include "binary_trees.h"
 
-
-
 /**
  * binary_tree_depth - measures the depth of a node in a binary tree
  * @tree: pointer to the node to measure the depth
@@ -32,7 +30,7 @@ return (depth);
  */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
-int b, left_perfect, right_perfect = 0;
+int left_perfect, right_perfect = 0;
 size_t left_depth, right_depth = 0;
 
 if (tree == NULL)
@@ -48,6 +46,8 @@ right_perfect = binary_tree_is_perfect(tree->right);
 left_depth = binary_tree_depth(tree->left);
 right_depth = binary_tree_depth(tree->right);
 
-return (left_perfect && right_perfect && (left_depth == right_depth))
+return (left_perfect && right_perfect && (left_depth == right_depth));
 }
+return (0);
+
 }
