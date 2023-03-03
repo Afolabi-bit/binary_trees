@@ -18,17 +18,17 @@ temp = malloc(sizeof(binary_tree_t));
 if (!temp)
 return (NULL);
 
-if (node->parent->left)
-{
-temp = node->parent->left;
-}
-else if (node->parent->right)
+if (node->parent->left == node)
 {
 temp = node->parent->right;
 }
+else if (node->parent->right == node)
+{
+temp = node->parent->left;
+}
 else
 {
-return (NULL)
+return (NULL);
 }
 
 return (temp);
