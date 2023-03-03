@@ -21,7 +21,7 @@ leftHeight = 1 + binary_tree_height(tree->left);
 }
 else
 {
-leftHeight = 0;
+leftHeight = 1;
 }
 if (tree->right)
 {
@@ -29,9 +29,10 @@ rightHeight = 1 + binary_tree_height(tree->right);
 }
 else
 {
-rightHeight = 0;
+rightHeight = 1;
 }
 return (leftHeight > rightHeight ? leftHeight : rightHeight);
+}
 
 /**
  * binary_tree_balance - measures the balance factor of a binary tree
