@@ -1,27 +1,42 @@
 #include "binary_trees.h"
 
+
+
+
 /**
- * binary_tree_depth - measures the depth of a node in a binary tree
- * @tree: pointer to the node to measure the depth
- * Return: depth of tree, otherwise 0
- * if tree is NULL, return 0
+ * binary_tree_height - measures the height of a binary tree
+ * @tree:  a pointer to the root node of the tree to measure the height.
+ * Return: the height of the tree, otherwise 0
+ * If tree is NULL, return 0
  */
-size_t binary_tree_depth(const binary_tree_t *tree)
+size_t binary_tree_height(const binary_tree_t *tree)
 {
-size_t depth = 0;
+size_t leftHeight = 0;
+size_t rightHeight = 0;
 
 if (tree == NULL)
 return (0);
 
-if (tree->parent == NULL)
+if (tree->left)
 {
-return (0);
+leftHeight = 1 + binary_tree_height(tree->left);
+}
+else
+{
+leftHeight = 0;
+}
+if (tree->right)
+{
+rightHeight = 1 + binary_tree_height(tree->right);
+}
+else
+{
+rightHeight = 0;
+}
+return (leftHeight > rightHeight ? leftHeight : rightHeight);
+
 }
 
-depth = 1 + binary_tree_depth(tree->parent);
-return (depth);
-
-}
 
 /**
  * binary_tree_is_perfect - checks if a binary tree is perfect
@@ -30,8 +45,8 @@ return (depth);
  */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
-int left_perfect, right_perfect = 0;
-int left_depth, right_depth = 0;
+int b, left_perfect, right_perfect = 0;
+size_t left_depth, right_depth = 0;
 
 if (tree == NULL)
 return (0);
@@ -43,11 +58,9 @@ if (tree->left && tree->right)
 {
 left_perfect = binary_tree_is_perfect(tree->left);
 right_perfect = binary_tree_is_perfect(tree->right);
-left_depth = binary_tree_depth(tree->left);
-right_depth = binary_tree_depth(tree->right);
+left_depth = binary_tree_height(tree->left);
+right_depth = binary_tree_height(tree->right);
 
-return (left_perfect && right_perfect && (left_depth == right_depth));
+return (left_perfect && right_perfect && (left_depth == right_depth))
 }
-return (0);
-
 }
