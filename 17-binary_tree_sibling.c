@@ -9,27 +9,11 @@
  */
 binary_tree_t *binary_tree_sibling(binary_tree_t *node)
 {
-binary_tree_t *temp;
-
 if (!node || !node->parent)
 return (NULL);
 
-temp = malloc(sizeof(binary_tree_t));
-if (!temp)
-return (NULL);
+if (node == node->parent->left)
+return (node->parent->right);
 
-if (node->parent->left == node)
-{
-temp = node->parent->right;
-}
-else if (node->parent->right == node)
-{
-temp = node->parent->left;
-}
-else
-{
-return (NULL);
-}
-
-return (temp);
+return (node->parent->left);
 }
