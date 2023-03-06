@@ -50,7 +50,7 @@ return;
 
 height = binary_tree_height(tree) + 1;
 for (i = 1; i <= height; i++)
-level_order(tree, func, level);
+level_order(tree, func, i);
 }
 
 /**
