@@ -40,7 +40,7 @@ return (is_complete_helper(tree, 0, t_size));
 }
 
 /**
- * btic_helper - checks if a binary tree is complete
+ * is_complete_helper - checks if a binary tree is complete
  * @tree: a pointer to the root node of the tree to check
  * @index: node index to check
  * @size: number of nodes in the tree
