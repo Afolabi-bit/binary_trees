@@ -12,7 +12,7 @@ binary_tree_t *temp;
 temp = tree->left;
 tree->left = temp->right;
 
-if(tree->right != NULL)
+if (tree->right != NULL)
 temp->right->parent = tree;
 
 temp->right = tree;
@@ -20,5 +20,4 @@ temp->parent = tree->parent;
 tree->parent = temp;
 
 return (temp);
-
 }
