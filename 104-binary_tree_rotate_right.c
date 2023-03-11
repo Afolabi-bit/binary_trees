@@ -15,7 +15,7 @@ return (NULL);
 temp = tree->left;
 tree->left = temp->right;
 
-if (tree->right != NULL)
+if (temp->right != NULL)
 temp->right->parent = tree;
 
 temp->right = tree;
